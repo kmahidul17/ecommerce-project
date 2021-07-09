@@ -68,7 +68,24 @@
         </section>
     </div>
 
-    {{--    category modal--}}
+    {{--    edit modal--}}
+
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Coupon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="modal_body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{--    add modal--}}
 
     <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -79,7 +96,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="#" method="POST">
+                <form action="{{route('coupon.store')}}" method="POST" id="add_form">
                     @csrf
 
                     <div class="modal-body">
@@ -90,7 +107,7 @@
                         <div class="form-group">
                             <label for="type">Coupon Type: </label>
                             <label>
-                                <select name="type" class="form-control">
+                                <select name="type" class="form-control" required>
                                     <option value="1">Fixed</option>
                                     <option value="2">Percentage</option>
                                 </select>
@@ -104,31 +121,27 @@
                             <label for="valid_date">Valid Date</label>
                             <input type="date" class="form-control"  name="valid_date" required>
                         </div>
+                        <div class="form-group">
+                            <label for="type">Status: </label>
+                            <label>
+                                <select name="status" class="form-control" required>
+                                    <option value="Active">Active</option>
+                                    <option value="Inactive">Inactive</option>
+                                </select>
+                            </label>
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        <button type="Submit" class="btn btn-primary"> <span class="d-none"> Loading...</span>Submit</button>
+{{--                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>--}}
+                        <button type="Submit" class="btn btn-primary"> <span class="loading d-none"> Loading...</span>Submit</button>
                     </div>
+
                 </form>
             </div>
         </div>
     </div>
 
-    {{--    edit modal--}}
 
-    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit category</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div id="modal_body">
-                </div>
-            </div>
-        </div>
 
 {{--        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>--}}
 
@@ -151,6 +164,40 @@
 
                 });
             });
+            //coupon add
+            $('#add_form').submit(function(e){
+                e.preventDefault();
+                $('.loading').removeClass('d-none');
+                var url = $(this).attr('action');
+                var request =$(this).serialize();
+                $.ajax({
+                    url:url,
+                    type:'POST',
+                    async:false,
+                    data:request,
+                    success:function(data){
+                        toastr.success(data);
+                        $('#add_form')[0].reset();
+                        $('.loading').addClass('d-none');
+                        $('#addModal').modal('hide');
+                        table.ajax.reload();
+                    }
+                });
+            });
+
+            //coupon edit
+
+            $('body').on('click','.edit',function (){
+                let id = $(this).data('id');
+                $.get("coupon/edit/"+id,function (data){
+                    $('#modal_body').html(data);
+                });
+            });
+
+
+
+
+
             $(document).ready(function(){
                 $(document).on('click', '#delete_coupon',function(e){
                     e.preventDefault();

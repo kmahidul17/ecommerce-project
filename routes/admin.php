@@ -69,10 +69,10 @@ Route::get('/admin-login', [App\Http\Controllers\Auth\LoginController::class, 'a
 
         Route::group(['prefix'=>'coupon'], function(){
             Route::get('/', 'CouponController@index')->name('coupon.index');
-//            Route::post('/store', 'BrandController@store')->name('brand.store');
+            Route::post('/store', 'CouponController@store')->name('coupon.store');
             Route::delete('/delete/{id}', 'CouponController@destroy')->name('coupon.delete');
-//            Route::get('/edit/{id}', 'BrandController@edit');
-//            Route::post('/update', 'BrandController@update')->name('brand.update');
+            Route::get('/edit/{id}', 'CouponController@edit');
+            Route::post('/update', 'CouponController@update')->name('coupon.update');
         });
 
         //Setting Routes

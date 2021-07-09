@@ -67,6 +67,15 @@ Route::get('/admin-login', [App\Http\Controllers\Auth\LoginController::class, 'a
 
         //Coupon routes
 
+        Route::group(['prefix'=>'pickup-point'], function(){
+            Route::get('/', 'PickupController@index')->name('pickuppoint.index');
+            Route::post('/store', 'PickupController@store')->name('pickuppoint.store');
+            Route::delete('/delete/{id}', 'PickupController@destroy')->name('pickuppoint.delete');
+            Route::get('/edit/{id}', 'PickupController@edit');
+            Route::post('/update', 'PickupController@update')->name('pickuppoint.update');
+        });
+        //Coupon routes
+
         Route::group(['prefix'=>'coupon'], function(){
             Route::get('/', 'CouponController@index')->name('coupon.index');
             Route::post('/store', 'CouponController@store')->name('coupon.store');

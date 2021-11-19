@@ -78,6 +78,27 @@ $setting = DB::table('settings')->first();
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
+                        <p>Product<i class="fas fa-angle-left right"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('product.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>New Product</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('product.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Manage Product</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-copy"></i>
                         <p>Offer<i class="fas fa-angle-left right"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -88,7 +109,7 @@ $setting = DB::table('settings')->first();
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('campaign.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>E Campaign</p>
                             </a>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard 2</title>
+    <title>Kino | Admin</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="{{asset('/backend')}}/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('/backend')}}/dist/css/adminlte.min.css">
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{asset('/backend')}}/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="{{asset('/backend')}}/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 
 {{--    <link rel="stylesheet" href="{{asset('/backend')}}/plugins/sweetalert2/sweetalert2.css">--}}
     <link rel="stylesheet" href="{{asset('/backend')}}/plugins/toastr/toastr.css">
@@ -24,6 +28,7 @@
     <link rel="stylesheet" href="{{asset('/backend')}}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="{{asset('/backend')}}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="{{asset('/backend')}}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
 </head>
 <body>
 <div class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -60,10 +65,10 @@
 
     <!-- Main Footer -->
     <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+        <strong>Copyright &copy; 2021 <a href="#">Kino | E-Commerce</a>.</strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.1.0
+            <b>Version</b> 0.0.1
         </div>
     </footer>
 </div>
@@ -194,6 +199,9 @@
 <script src="{{asset('/backend')}}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="{{asset('/backend')}}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+<!-- Select2 -->
+<script src="{{asset('/backend')}}/plugins/select2/js/select2.full.min.js"></script>
+
 <!-- Summernote -->
 <script src="{{asset('/backend')}}/plugins/summernote/summernote-bs4.min.js"></script>
 <script>
@@ -201,6 +209,14 @@ $(function () {
 // Summernote
 $('#summernote').summernote()
 
+})
+
+//Initialize Select2 Elements
+$('.select2').select2()
+
+//Initialize Select2 Elements
+$('.select2bs4').select2({
+    theme: 'bootstrap4'
 })
 </script>
 
@@ -221,6 +237,7 @@ $('#summernote').summernote()
         });
     });
 </script>
+
 
 </body>
 </html>

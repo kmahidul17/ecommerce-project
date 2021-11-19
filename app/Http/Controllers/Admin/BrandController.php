@@ -26,13 +26,18 @@ class BrandController extends Controller
 
             return DataTables::of($data)
                 ->addIndexColumn()
+                ->editColumn('front_page',function($row){
+                    if ($row->front_page==1) {
+                        return '<span class="badge badge-success">Front Page</span>';
+                    }
+                })
                 ->addColumn('action',function ($row){
                     $actionbtn = '<a href="#" class="btn btn-info btn-sm edit" data-id="'.$row->id.'" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i></a>
                           <a href="'.route('brand.delete',[$row->id]).'" class="btn btn-danger btn-sm" id="delete"><i class="fas fa-trash"></i></a>';
 
                     return $actionbtn;
 
-                })->rawColumns(['action'])
+                })->rawColumns(['action','front_page'])
                 ->make(true) ;
 
         }
@@ -51,12 +56,11 @@ class BrandController extends Controller
         $data = array();
         $data['brand_name'] = $request->brand_name;
         $data ['brand_slug'] = Str::slug($request->brand_name, '-');
+        $data['front_page']=$request->front_page;
         //Image process
 
         $photo = $request->brand_logo;
         $photo_name = $slug.'.'.$photo->getClientOriginalExtension();
-//        $photo->move('files/brand/',$photo_name); // Without Image Intervention
-
         Image::make($photo)->resize(240,120)->save('files/brand/'.$photo_name); //Image Intervention
 
         $data['brand_logo'] = 'files/brand/'.$photo_name;
@@ -100,6 +104,7 @@ class BrandController extends Controller
         $data = array();
         $data['brand_name'] = $request->brand_name;
         $data ['brand_slug'] = Str::slug($request->brand_name, '-');
+        $data['front_page']=$request->front_page;
 
         if ($request->brand_logo){
             if (File::exists($request->old_logo)){

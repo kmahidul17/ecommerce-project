@@ -25,6 +25,9 @@ Route::get('/admin-login', [App\Http\Controllers\Auth\LoginController::class, 'a
             Route::post('/update', 'CategoryController@update')->name('category.update');
         });
 
+        //global routes
+        Route::get('/get-child-category/{id}', 'CategoryController@GetChildCategory');
+
         //warehouse routes
 
         Route::group(['prefix'=>'warehouse'], function(){
@@ -65,7 +68,24 @@ Route::get('/admin-login', [App\Http\Controllers\Auth\LoginController::class, 'a
             Route::post('/update', 'BrandController@update')->name('brand.update');
         });
 
-        //Coupon routes
+        //Product Routes
+
+        Route::group(['prefix'=>'product'], function(){
+            Route::get('/', 'ProductController@index')->name('product.index');
+            Route::get('/create', 'ProductController@create')->name('product.create');
+            Route::post('/store', 'ProductController@store')->name('product.store');
+            Route::get('/delete/{id}', 'ProductController@destroy')->name('product.delete');
+            Route::get('/edit/{id}', 'ProductController@edit')->name('product.edit');
+//            Route::post('/update', 'BrandController@update')->name('brand.update');
+            Route::get('/not-featured/{id}', 'ProductController@notFeatured');
+            Route::get('/featured/{id}', 'ProductController@featured');
+            Route::get('/not-deal/{id}', 'ProductController@notDeal');
+            Route::get('/active-deal/{id}', 'ProductController@activeDeal');
+            Route::get('/deactive-status/{id}', 'ProductController@deactiveStatus');
+            Route::get('/active-status/{id}', 'ProductController@activeStatus');
+        });
+
+        //Pickup Point routes
 
         Route::group(['prefix'=>'pickup-point'], function(){
             Route::get('/', 'PickupController@index')->name('pickuppoint.index');
@@ -74,14 +94,23 @@ Route::get('/admin-login', [App\Http\Controllers\Auth\LoginController::class, 'a
             Route::get('/edit/{id}', 'PickupController@edit');
             Route::post('/update', 'PickupController@update')->name('pickuppoint.update');
         });
-        //Coupon routes
 
+        //Coupon routes
         Route::group(['prefix'=>'coupon'], function(){
             Route::get('/', 'CouponController@index')->name('coupon.index');
             Route::post('/store', 'CouponController@store')->name('coupon.store');
             Route::delete('/delete/{id}', 'CouponController@destroy')->name('coupon.delete');
             Route::get('/edit/{id}', 'CouponController@edit');
             Route::post('/update', 'CouponController@update')->name('coupon.update');
+        });
+
+        //Coupon routes
+        Route::group(['prefix'=>'campaign'], function(){
+            Route::get('/', 'CampaignController@index')->name('campaign.index');
+            Route::post('/store', 'CampaignController@store')->name('campaign.store');
+            Route::get('/delete/{id}', 'CampaignController@destroy')->name('campaign.delete');
+            Route::get('/edit/{id}', 'CampaignController@edit');
+            Route::post('/update', 'CampaignController@update')->name('campaign.update');
         });
 
         //Setting Routes

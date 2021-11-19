@@ -36,6 +36,7 @@
                                         <th>Brand Name</th>
                                         <th>Brand Slug</th>
                                         <th>Brand Logo</th>
+                                        <th>Front Page</th>
                                         <th>Action</th>
 
                                     </tr>
@@ -50,6 +51,7 @@
                                         <th>Brand Name</th>
                                         <th>Brand Slug</th>
                                         <th>Brand Logo</th>
+                                        <th>Front Page</th>
                                         <th>Action</th>
 
                                     </tr>
@@ -89,6 +91,15 @@
                             <input type="file" class="dropify" data-height="140" id="input-file-now" name="brand_logo" required>
                             <small id="emailHelp" class="form-text text-muted">This is your Brand Logo</small>
                         </div>
+                        <div class="form-group">
+                            <label for="brand-name">Front Page Show</label>
+                            <select class="form-control" name="front_page">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <small id="emailHelp" class="form-text text-muted">If yes, it will be shown to your home page </small>
+                        </div>
+
                     </div>
                     <div class="modal-footer">
                         {{--                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>--}}
@@ -137,6 +148,7 @@
                         {data: 'brand_logo',name:'brand_logo',render:function (data, type, full, meta){
                                 return "<img src=\"" +data+ "\" height=\"30\" />";
                             }},
+                        {data: 'front_page',name:'front_page'},
                         {data: 'action',name:'action', orderable:true,searchable:true},
                     ],
 

@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
+
 
 class CategoryController extends Controller
 {
@@ -27,6 +30,7 @@ class CategoryController extends Controller
 
         $validated = $request->validate([
             'category_name' => 'required|unique:categories|max:55',
+            'icon' => 'required',
         ]);
 
         //query builder
@@ -35,12 +39,19 @@ class CategoryController extends Controller
 //        $data['category_name'] = $request->category_name;
 //        $data['category_slug'] = Str::slug($request->category_name, '-');
 //        DB::table('categories')->insert($data);
+        $slug = Str::slug($request->category_name, '-');
+        $photo = $request->icon;
+        $photo_name = $slug.'.'.$photo->getClientOriginalExtension();
+        Image::make($photo)->resize(32,32)->save('files/category/'.$photo_name); //Image Intervention
+
 
         //Eloquent ORM
 
         Category::insert([
             'category_name' => $request->category_name,
-            'category_slug' => Str::slug($request->category_name, '-')
+            'category_slug' => Str::slug($request->category_name, '-'),
+            'home_page' => $request->home_page,
+            'icon' => 'files/category/'.$photo_name,
         ]);
 
         $notification = array('message'=>'Category Added Successfully', 'alert-type' => 'success');
@@ -51,26 +62,35 @@ class CategoryController extends Controller
 
 //        $data = DB::table('categories')->where('id',$id)->first();
         $data = Category::findorfail($id);
-        return response()->json($data);
+        return view('admin.category.category.edit',compact('data'));
 
     }
 
     public function update(Request $request){
 
-        $data = array();
-        $data['category_name'] = $request->category_name;
-        $data['category_slug'] = Str::slug($request->category_name, '-');
+        $slug=Str::slug($request->category_name, '-');
+        $data=array();
+        $data['category_name']=$request->category_name;
+        $data['category_slug']=$slug;
+        $data['home_page']=$request->home_page;
+        if ($request->icon) {
+            if (File::exists($request->old_icon)) {
+                unlink($request->old_icon);
+            }
+            $photo=$request->icon;
+            $photoname=$slug.'.'.$photo->getClientOriginalExtension();
+            Image::make($photo)->resize(32,32)->save('files/category/'.$photoname);
+            $data['icon']='files/category/'.$photoname;
+            DB::table('categories')->where('id',$request->id)->update($data);
+            $notification=array('message' => 'Category Updated Successfully!', 'alert-type' => 'success');
+            return redirect()->back()->with($notification);
+        }else{
+            $data['icon']=$request->old_icon;
+            DB::table('categories')->where('id',$request->id)->update($data);
+            $notification=array('message' => 'Category Updated Successfully!', 'alert-type' => 'success');
+            return redirect()->back()->with($notification);
+        }
 
-        DB::table('categories')->where('id',$request->category_id)->update($data);
-
-//        $category = Category::where('id',$request->id)->first();
-//        $category->update([
-//            'category_name' => $request->category_name,
-//            'category_slug' => Str::slug($request->category_name, '-')
-//        ]);
-
-        $notification = array('message'=>'Category Updated Successfully', 'alert-type' => 'success');
-        return redirect()->back()->with($notification);
 
 
     }
@@ -88,6 +108,14 @@ class CategoryController extends Controller
         $notification = array('message'=>'Category Deleted Successfully', 'alert-type' => 'success');
         return redirect()->back()->with($notification);
 
+    }
+
+    //get child category
+    public function GetChildCategory($id)
+    {
+
+        $data = DB::table('childcategories')->where('subcategory_id', '=', $id)->get();
+        return response()->json($data);
     }
 
 

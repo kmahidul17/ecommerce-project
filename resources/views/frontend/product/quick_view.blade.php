@@ -1,41 +1,39 @@
-{{--<style>--}}
-{{--    .loader {--}}
-{{--        border: 16px solid #f3f3f3;--}}
-{{--        border-radius: 50%;--}}
-{{--        border-top: 16px solid #3498db;--}}
-{{--        width: 30px;--}}
-{{--        height: 30px;--}}
-{{--        margin-left: 45%;--}}
-{{--        margin-top: 15%;--}}
-{{--        margin-bottom: 18%;--}}
-{{--        -webkit-animation: spin 2s linear infinite; /* Safari */--}}
-{{--        animation: spin 2s linear infinite;--}}
-{{--    }--}}
+<style>
+    .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 30px;
+        height: 30px;
+        margin-left: 45%;
+        margin-top: 15%;
+        margin-bottom: 18%;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+    }
 
-{{--    /* Safari */--}}
-{{--    @-webkit-keyframes spin {--}}
-{{--        0% { -webkit-transform: rotate(0deg); }--}}
-{{--        100% { -webkit-transform: rotate(360deg); }--}}
-{{--    }--}}
+    /* Safari */
+    @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+    }
 
-{{--    @keyframes spin {--}}
-{{--        0% { transform: rotate(0deg); }--}}
-{{--        100% { transform: rotate(360deg); }--}}
-{{--    }--}}
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
 
 
-{{--</style>--}}
+</style>
 
 @php
     $color=explode(',',$product->color);
     $sizes=explode(',',$product->size);
 @endphp
 {{-- preloader for product quick view --}}
-{{--<div class="loader"></div>--}}
+<div class="loader"></div>
 
-<div class="modal-body
-{{--product_view d-none--}}
-">
+<div class="modal-body product_view d-none">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-4">
@@ -60,7 +58,7 @@
 
                 <br>
                 <div class="order_info d-flex flex-row">
-{{--                    <form action="#" method="post" id="add_cart_form">--}}
+                    <form action="{{route('add.to.cart.quickView')}}" method="post" id="add_cart_form">
                         @csrf
                         {{-- cart add details --}}
                         <input type="hidden" name="id" value="{{$product->id}}">
@@ -113,7 +111,7 @@
                             </div>
                         </div>
 
-{{--                    </form>--}}
+                    </form>
                 </div>
             </div>
         </div>
@@ -121,34 +119,34 @@
 </div>
 
 
-{{--<script type="text/javascript">--}}
-{{--    $('.loader').ready(function() {--}}
-{{--        setTimeout(function() {--}}
-{{--            $('.product_view').removeClass("d-none");--}}
-{{--            $('.loader').css("display", "none");--}}
-{{--        }, 500);--}}
-{{--    });--}}
-{{--</script>--}}
+<script type="text/javascript">
+    $('.loader').ready(function() {
+        setTimeout(function() {
+            $('.product_view').removeClass("d-none");
+            $('.loader').css("display", "none");
+        }, 500);
+    });
+</script>
 
-{{--<script type="text/javascript">--}}
-{{--    //store coupon ajax call--}}
-{{--    $('#add_cart_form').submit(function(e){--}}
-{{--        e.preventDefault();--}}
-{{--        $('.loading').removeClass('d-none');--}}
-{{--        var url = $(this).attr('action');--}}
-{{--        var request =$(this).serialize();--}}
-{{--        $.ajax({--}}
-{{--            url:url,--}}
-{{--            type:'post',--}}
-{{--            async:false,--}}
-{{--            data:request,--}}
-{{--            success:function(data){--}}
-{{--                toastr.success(data);--}}
-{{--                $('#add_cart_form')[0].reset();--}}
-{{--                $('.loading').addClass('d-none');--}}
-{{--                cart();--}}
-{{--            }--}}
-{{--        });--}}
-{{--    });--}}
-{{--</script>   --}}
+<script type="text/javascript">
+    //store coupon ajax call
+    $('#add_cart_form').submit(function(e){
+        e.preventDefault();
+        $('.loading').removeClass('d-none');
+        var url = $(this).attr('action');
+        var request =$(this).serialize();
+        $.ajax({
+            url:url,
+            type:'post',
+            async:false,
+            data:request,
+            success:function(data){
+                toastr.success(data);
+                $('#add_cart_form')[0].reset();
+                $('.loading').addClass('d-none');
+                cart();
+            }
+        });
+    });
+</script>
 

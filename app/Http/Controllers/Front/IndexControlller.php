@@ -7,6 +7,7 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Review;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
 class IndexControlller extends Controller
@@ -41,5 +42,16 @@ class IndexControlller extends Controller
         $product = Product::where('id',$id)->first();
 //        return response()->json(array($product));
         return view('frontend.product.quick_view', compact('product'));
+    }
+
+    public function categoryWiseProduct($category_slug){
+        $category = Category::where('category_slug',$category_slug)->first();
+//        dd($category->id);
+        $subcategory = Subcategory::where('category_id',$category->id)->get();
+        $brand = Brand::all();
+        $products = Product::where('category_id',$category->id)->paginate(20);
+        $random_product=Product::where('status',1)->inRandomOrder()->limit(16)->get();
+
+        return view('frontend.product.category_product',compact('category','subcategory','brand','products','random_product'));
     }
 }

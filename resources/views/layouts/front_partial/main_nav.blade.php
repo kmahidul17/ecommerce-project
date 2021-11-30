@@ -19,7 +19,7 @@
                                 $subcategory = DB::table('subcategories')->where('category_id',$row->id)->get();
                                 @endphp
                             <li class="hassubs">
-                                <a href="#">
+                                <a href="{{route('categoryWise.product',$row->category_slug)}}">
                                     <img src="{{$row->icon}}" alt="" height="20" width="20" class="mr-2">   {{$row->category_name}}<i class="fas fa-chevron-right"></i>
                                 </a>
                                 <ul>

@@ -54,4 +54,10 @@ class IndexControlller extends Controller
 
         return view('frontend.product.category_product',compact('category','subcategory','brand','products','random_product'));
     }
+
+    //constact page
+    public function Contact()
+    {
+        return view('frontend.contact');
+    }
 }

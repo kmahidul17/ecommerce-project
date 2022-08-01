@@ -45,17 +45,7 @@
 
 
                                     </tbody>
-                                    <tfoot>
-                                    <tr>
-                                        <th>SL</th>
-                                        <th>Brand Name</th>
-                                        <th>Brand Slug</th>
-                                        <th>Brand Logo</th>
-                                        <th>Front Page</th>
-                                        <th>Action</th>
-
-                                    </tr>
-                                    </tfoot>
+                                  
                                 </table>
                             </div>
                         </div>

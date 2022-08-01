@@ -825,8 +825,8 @@
                 <div class="col">
 
                     <div class="reviews_title_container">
-                        <h3 class="reviews_title">Latest Reviews</h3>
-                        <div class="reviews_all ml-auto"><a href="#">view all <span>reviews</span></a></div>
+                        <h3 class="reviews_title">Upcoming Products</h3>
+{{--                        <div class="reviews_all ml-auto"><a href="#">view all <span>reviews</span></a></div>--}}
                     </div>
 
                     <div class="reviews_slider_container">
@@ -838,14 +838,14 @@
                             <div class="owl-item">
                                 <div class="review d-flex flex-row align-items-start justify-content-start">
                                     <div><div class="review_image"><img src="{{asset('/frontend')}}/images/review_1.jpg" alt=""></div></div>
-                                    <div class="review_content">
-                                        <div class="review_name">Roberto Sanchez</div>
-                                        <div class="review_rating_container">
-                                            <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                            <div class="review_time">2 day ago</div>
-                                        </div>
-                                        <div class="review_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p></div>
-                                    </div>
+{{--                                    <div class="review_content">--}}
+{{--                                        <div class="review_name">Roberto Sanchez</div>--}}
+{{--                                        <div class="review_rating_container">--}}
+{{--                                            <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>--}}
+{{--                                            <div class="review_time">2 day ago</div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="review_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p></div>--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
 
@@ -853,14 +853,14 @@
                             <div class="owl-item">
                                 <div class="review d-flex flex-row align-items-start justify-content-start">
                                     <div><div class="review_image"><img src="{{asset('/frontend')}}/images/review_2.jpg" alt=""></div></div>
-                                    <div class="review_content">
-                                        <div class="review_name">Brandon Flowers</div>
-                                        <div class="review_rating_container">
-                                            <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                            <div class="review_time">2 day ago</div>
-                                        </div>
-                                        <div class="review_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p></div>
-                                    </div>
+{{--                                    <div class="review_content">--}}
+{{--                                        <div class="review_name">Brandon Flowers</div>--}}
+{{--                                        <div class="review_rating_container">--}}
+{{--                                            <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>--}}
+{{--                                            <div class="review_time">2 day ago</div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="review_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p></div>--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
 
@@ -868,14 +868,14 @@
                             <div class="owl-item">
                                 <div class="review d-flex flex-row align-items-start justify-content-start">
                                     <div><div class="review_image"><img src="{{asset('/frontend')}}/images/review_3.jpg" alt=""></div></div>
-                                    <div class="review_content">
-                                        <div class="review_name">Emilia Clarke</div>
-                                        <div class="review_rating_container">
-                                            <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                            <div class="review_time">2 day ago</div>
-                                        </div>
-                                        <div class="review_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p></div>
-                                    </div>
+{{--                                    <div class="review_content">--}}
+{{--                                        <div class="review_name">Emilia Clarke</div>--}}
+{{--                                        <div class="review_rating_container">--}}
+{{--                                            <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>--}}
+{{--                                            <div class="review_time">2 day ago</div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="review_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p></div>--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
 
@@ -883,14 +883,14 @@
                             <div class="owl-item">
                                 <div class="review d-flex flex-row align-items-start justify-content-start">
                                     <div><div class="review_image"><img src="{{asset('/frontend')}}/images/review_1.jpg" alt=""></div></div>
-                                    <div class="review_content">
-                                        <div class="review_name">Roberto Sanchez</div>
-                                        <div class="review_rating_container">
-                                            <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                            <div class="review_time">2 day ago</div>
-                                        </div>
-                                        <div class="review_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p></div>
-                                    </div>
+{{--                                    <div class="review_content">--}}
+{{--                                        <div class="review_name">Roberto Sanchez</div>--}}
+{{--                                        <div class="review_rating_container">--}}
+{{--                                            <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>--}}
+{{--                                            <div class="review_time">2 day ago</div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="review_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p></div>--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
 
@@ -898,14 +898,14 @@
                             <div class="owl-item">
                                 <div class="review d-flex flex-row align-items-start justify-content-start">
                                     <div><div class="review_image"><img src="{{asset('/frontend')}}/images/review_2.jpg" alt=""></div></div>
-                                    <div class="review_content">
-                                        <div class="review_name">Brandon Flowers</div>
-                                        <div class="review_rating_container">
-                                            <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                            <div class="review_time">2 day ago</div>
-                                        </div>
-                                        <div class="review_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p></div>
-                                    </div>
+{{--                                    <div class="review_content">--}}
+{{--                                        <div class="review_name">Brandon Flowers</div>--}}
+{{--                                        <div class="review_rating_container">--}}
+{{--                                            <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>--}}
+{{--                                            <div class="review_time">2 day ago</div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="review_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p></div>--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
 
@@ -913,14 +913,14 @@
                             <div class="owl-item">
                                 <div class="review d-flex flex-row align-items-start justify-content-start">
                                     <div><div class="review_image"><img src="{{asset('/frontend')}}/images/review_3.jpg" alt=""></div></div>
-                                    <div class="review_content">
-                                        <div class="review_name">Emilia Clarke</div>
-                                        <div class="review_rating_container">
-                                            <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                            <div class="review_time">2 day ago</div>
-                                        </div>
-                                        <div class="review_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p></div>
-                                    </div>
+{{--                                    <div class="review_content">--}}
+{{--                                        <div class="review_name">Emilia Clarke</div>--}}
+{{--                                        <div class="review_rating_container">--}}
+{{--                                            <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>--}}
+{{--                                            <div class="review_time">2 day ago</div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="review_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p></div>--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
 
@@ -1012,82 +1012,82 @@
 
     <!-- Characteristics -->
 
-    <div class="characteristics">
-        <div class="container">
-            <div class="row">
+{{--    <div class="characteristics">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
 
-                <!-- Char. Item -->
-                <div class="col-lg-3 col-md-6 char_col">
+{{--                <!-- Char. Item -->--}}
+{{--                <div class="col-lg-3 col-md-6 char_col">--}}
 
-                    <div class="char_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="char_icon"><img src="{{ asset('public/frontend') }}/images/char_1.png" alt=""></div>
-                        <div class="char_content">
-                            <div class="char_title">Free Delivery</div>
-                            <div class="char_subtitle">from $50</div>
-                        </div>
-                    </div>
-                </div>
+{{--                    <div class="char_item d-flex flex-row align-items-center justify-content-start">--}}
+{{--                        <div class="char_icon"><img src="{{ asset('public/frontend') }}/images/char_1.png" alt=""></div>--}}
+{{--                        <div class="char_content">--}}
+{{--                            <div class="char_title">Free Delivery</div>--}}
+{{--                            <div class="char_subtitle">from $50</div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <!-- Char. Item -->
-                <div class="col-lg-3 col-md-6 char_col">
-                    <div class="char_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="char_icon"><img src="{{ asset('public/frontend') }}/images/char_2.png" alt=""></div>
-                        <div class="char_content">
-                            <div class="char_title">Free Delivery</div>
-                            <div class="char_subtitle">from $50</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Char. Item -->
-                <div class="col-lg-3 col-md-6 char_col">
-                    <div class="char_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="char_icon"><img src="{{ asset('public/frontend') }}/images/char_3.png" alt=""></div>
-                        <div class="char_content">
-                            <div class="char_title">Free Delivery</div>
-                            <div class="char_subtitle">from $50</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Char. Item -->
-                <div class="col-lg-3 col-md-6 char_col">
-                    <div class="char_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="char_icon"><img src="{{ asset('public/frontend') }}/images/char_4.png" alt=""></div>
-                        <div class="char_content">
-                            <div class="char_title">Free Delivery</div>
-                            <div class="char_subtitle">from $50</div>
-                        </div>
-                    </div>
-                </div>
+{{--                <!-- Char. Item -->--}}
+{{--                <div class="col-lg-3 col-md-6 char_col">--}}
+{{--                    <div class="char_item d-flex flex-row align-items-center justify-content-start">--}}
+{{--                        <div class="char_icon"><img src="{{ asset('public/frontend') }}/images/char_2.png" alt=""></div>--}}
+{{--                        <div class="char_content">--}}
+{{--                            <div class="char_title">Free Delivery</div>--}}
+{{--                            <div class="char_subtitle">from $50</div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <!-- Char. Item -->--}}
+{{--                <div class="col-lg-3 col-md-6 char_col">--}}
+{{--                    <div class="char_item d-flex flex-row align-items-center justify-content-start">--}}
+{{--                        <div class="char_icon"><img src="{{ asset('public/frontend') }}/images/char_3.png" alt=""></div>--}}
+{{--                        <div class="char_content">--}}
+{{--                            <div class="char_title">Free Delivery</div>--}}
+{{--                            <div class="char_subtitle">from $50</div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <!-- Char. Item -->--}}
+{{--                <div class="col-lg-3 col-md-6 char_col">--}}
+{{--                    <div class="char_item d-flex flex-row align-items-center justify-content-start">--}}
+{{--                        <div class="char_icon"><img src="{{ asset('public/frontend') }}/images/char_4.png" alt=""></div>--}}
+{{--                        <div class="char_content">--}}
+{{--                            <div class="char_title">Free Delivery</div>--}}
+{{--                            <div class="char_subtitle">from $50</div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-            </div>
-        </div>
-    </div>
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
 
     <!-- Newsletter -->
 
-    <div class="newsletter">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">
-                        <div class="newsletter_title_container">
-                            <div class="newsletter_icon"><img src="{{asset('/frontend')}}/images/send.png" alt=""></div>
-                            <div class="newsletter_title">Sign up for Newsletter</div>
-                            <div class="newsletter_text"><p>...and receive %20 coupon for first shopping.</p></div>
-                        </div>
-                        <div class="newsletter_content clearfix">
-                            <form action="#" class="newsletter_form">
-                                <input type="email" class="newsletter_input" required="required" placeholder="Enter your email address">
-                                <button class="newsletter_button">Subscribe</button>
-                            </form>
-                            <div class="newsletter_unsubscribe_link"><a href="#">unsubscribe</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="newsletter">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col">--}}
+{{--                    <div class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">--}}
+{{--                        <div class="newsletter_title_container">--}}
+{{--                            <div class="newsletter_icon"><img src="{{asset('/frontend')}}/images/send.png" alt=""></div>--}}
+{{--                            <div class="newsletter_title">Sign up for Newsletter</div>--}}
+{{--                            <div class="newsletter_text"><p>...and receive %20 coupon for first shopping.</p></div>--}}
+{{--                        </div>--}}
+{{--                        <div class="newsletter_content clearfix">--}}
+{{--                            <form action="#" class="newsletter_form">--}}
+{{--                                <input type="email" class="newsletter_input" required="required" placeholder="Enter your email address">--}}
+{{--                                <button class="newsletter_button">Subscribe</button>--}}
+{{--                            </form>--}}
+{{--                            <div class="newsletter_unsubscribe_link"><a href="#">unsubscribe</a></div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog  modal-lg  modal-dialog-centered" role="document">
             <div class="modal-content">

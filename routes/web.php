@@ -26,6 +26,11 @@ Route::group(['namespace'=>'App\Http\Controllers\Front'],function (){
     Route::get('/all-cart','CartController@allCart')->name('all.cart');
     Route::get('/my-cart','CartController@myCart')->name('cart');
     Route::get('/cart/empty','CartController@EmptyCart')->name('cart.empty');
+    Route::get('/checkout','CheckoutController@Checkout')->name('checkout');
+    Route::post('/apply/coupon','CheckoutController@ApplyCoupon')->name('apply.coupon');
+    Route::get('/remove/coupon','CheckoutController@RemoveCoupon')->name('coupon.remove');
+    Route::post('/order/place','CheckoutController@OrderPlace')->name('order.place');
+
 
     Route::get('/cartproduct/remove/{rowId}','CartController@RemoveProduct');
     Route::get('/cartproduct/updateqty/{rowId}/{qty}','CartController@UpdateQty');
@@ -49,4 +54,7 @@ Route::group(['namespace'=>'App\Http\Controllers\Front'],function (){
 
     //category wise product
     Route::get('/category/product/{category_slug}','IndexControlller@categoryWiseProduct')->name('categoryWise.product');
+
+    //contact
+    Route::get('/contact-us','IndexControlller@Contact')->name('contact');
 });

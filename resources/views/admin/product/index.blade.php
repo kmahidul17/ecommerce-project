@@ -92,22 +92,7 @@
 
 
                                     </tbody>
-                                    <tfoot>
-                                    <tr>
-                                        <th>SL</th>
-                                        <th>Thumbnail</th>
-                                        <th>Name</th>
-                                        <th>Code</th>
-                                        <th>Category</th>
-                                        <th>Subcategory</th>
-                                        <th>Brand</th>
-                                        <th>Featured</th>
-                                        <th>Today Deal</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-
-                                    </tr>
-                                    </tfoot>
+                                    
                                 </table>
                             </div>
                         </div>

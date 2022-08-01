@@ -76,7 +76,7 @@ Route::get('/admin-login', [App\Http\Controllers\Auth\LoginController::class, 'a
             Route::post('/store', 'ProductController@store')->name('product.store');
             Route::get('/delete/{id}', 'ProductController@destroy')->name('product.delete');
             Route::get('/edit/{id}', 'ProductController@edit')->name('product.edit');
-//            Route::post('/update', 'BrandController@update')->name('brand.update');
+           Route::post('/update','ProductController@update')->name('product.update');
             Route::get('/not-featured/{id}', 'ProductController@notFeatured');
             Route::get('/featured/{id}', 'ProductController@featured');
             Route::get('/not-deal/{id}', 'ProductController@notDeal');
@@ -111,6 +111,16 @@ Route::get('/admin-login', [App\Http\Controllers\Auth\LoginController::class, 'a
             Route::get('/delete/{id}', 'CampaignController@destroy')->name('campaign.delete');
             Route::get('/edit/{id}', 'CampaignController@edit');
             Route::post('/update', 'CampaignController@update')->name('campaign.update');
+        });
+        //__order
+        Route::group(['prefix'=>'order'], function(){
+            Route::get('/','OrderController@index')->name('admin.order.index');
+            // Route::post('/store','CampaignController@store')->name('campaign.store');
+            Route::get('/admin/edit/{id}','OrderController@Editorder');
+            Route::post('/update/order/status','OrderController@updateStatus')->name('update.order.status');
+            Route::get('/view/admin/{id}','OrderController@ViewOrder');
+            Route::get('/delete/{id}','OrderController@delete')->name('order.delete');
+
         });
 
         //Setting Routes
